@@ -1,0 +1,17 @@
+# BD1 blob   : Rg / Angstrom = 86.8749, sgm / Angstrom = 53.2052
+# BD2 blob   : Rg / Angstrom = 86.9014, sgm / Angstrom = 52.2461
+# Fundamental lengthscale = 50 Angstrom
+
+# Pair coeffs:
+pair_coeff	* * lj/cut	  0.00000000   1.00000000   1.12246205   # for all missing types
+pair_coeff	* * gauss	  0.00000000   1.00000000   1.00000000   # 
+pair_coeff	1 1 lj/cut	  1.00000000   1.05451335   1.18365122   # BD1-BD1
+pair_coeff	1 1 gauss	  2.00349931   0.26499754   8.91438379   # 
+pair_coeff	1 2 lj/cut	  1.00000000   1.05451335   1.18365122   # BD1-BD2
+pair_coeff	1 2 gauss	  2.05699981   0.26491663   8.91513418   # 
+pair_coeff	2 2 lj/cut	  1.00000000   1.05451335   1.18365122   # BD2-BD2
+pair_coeff	2 2 gauss	  2.11192926   0.26483577   8.91588446   # 
+
+# Bond coeffs:
+bond_coeff	*    0.00000000   1.00000000   0.00000000   1.00000000   # for all missing types
+bond_coeff	1    1.12653208  16.64400000   1.00000000   0.86700000   # BD1-BD2
