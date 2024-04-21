@@ -1,0 +1,280 @@
+Removing intel-mpi for intel version 2021.1.1
+Removing intel version 2021.1.2
+
+Unloading /opt/intel/oneapi/compiler/2021.1.2/linux/lib/oclfpga/modulefiles/oclfpga
+  ERROR: No such file or directory on
+    '/opt/intel/oneapi/compiler/2021.1.2/linux/lib/oclfpga/modulefiles/oclfpga'
+
+Removing intel-dpl version 2021.1.2
+Removing intel-debugger version 10.0.0
+Removing intel-mkl version 2021.1.1
+Removing intel-tbb version 2021.1.1
+Removing intel-rt version 2021.1.2
+Loading intel/19.1.1.217
+  Loading requirement: intel-mkl/2020.1
+Loading intel-mpi/intel/2019.7
+  Loading requirement: ucx/1.9.0
+LAMMPS (23 Jun 2022 - Update 3)
+  using 1 OpenMP thread(s) per MPI task
+Reading data file ...
+  orthogonal box = (0 0 0) to (204.661 204.661 204.661)
+  1 by 1 by 2 MPI processor grid
+  reading atoms ...
+  6750 atoms
+  scanning bonds ...
+  1 = max bonds/atom
+  reading bonds ...
+  3375 bonds
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        1        1       
+  special bond factors coul:  0        1        1       
+     1 = max # of 1-2 neighbors
+     1 = max # of special neighbors
+  special bonds CPU = 0.001 seconds
+  read_data CPU = 0.033 seconds
+6750 atoms in group nonchromatin
+3375 atoms in group coreatoms
+----------------------------------------------------------
+Using INTEL Package without Coprocessor.
+Compiler: Intel Classic C++ 19.10.0 / Intel(R) C++ g++ 8.5 mode
+SIMD compiler directives: Enabled
+Precision: mixed
+----------------------------------------------------------
+Generated 0 of 36 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 5.2158845
+  ghost atom cutoff = 5.2158845
+  binsize = 2.6079422, bins = 79 79 79
+  3 neighbor lists, perpetual/occasional/extra = 2 1 0
+  (1) pair lj/cut, perpetual
+      attributes: half, newton on, intel
+      pair build: half/bin/newton/intel
+      stencil: half/bin/3d
+      bin: intel
+  (2) pair gauss, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+  (3) compute cluster/atom, occasional
+      attributes: full, newton on
+      pair build: full/bin
+      stencil: full/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 0
+  Time step     : 0.0001
+Per MPI rank memory allocation (min/avg/max) = 36.14 | 38.04 | 39.94 Mbytes
+   Step          Fmax           Temp          PotEng          Pxx            Pyy            Pzz            Pxy            Pxz            Pyz          Density          Xlo             Lx            Ylo             Ly            Zlo             Lz        v_avgmolgyr  
+         0   33.970462      0              0.0018673368   0              0             -3.8086801e-05  0              0              0              0.0001489169   0              204.661        0              204.661        0              204.661        0.52726467   
+      1000   33.994839      0.019963876    0.0028488388   1.6463529e-05  1.6616511e-05 -3.2173936e-05 -1.3765725e-08  2.9408868e-08  1.3451637e-07  0.00015811189  4.0214946      196.61801      4.0214946      196.61801     -2.0953804      208.85176      0.53509041   
+      2000   37.966671      0.038297883    0.0053085377   3.4732419e-05  3.4861171e-05  2.9355383e-05 -2.4711371e-07  5.4838644e-07 -2.1464311e-07  0.00016787463  7.8849481      188.8911       7.8849481      188.8911      -4.2336671      213.12833      0.5393319    
+      3000   37.452998      0.055813142    0.00819953     5.5127291e-05  5.6759463e-05  4.9191507e-05  1.0586421e-06 -1.0203203e-07 -9.7940014e-07  0.00017824018  11.596572      181.46786      11.596572      181.46786     -6.4157386      217.49248      0.54736337   
+      4000   36.661929      0.072468742    0.012020194    7.6725337e-05  7.7017989e-05  2.9852389e-05  2.069403e-06  -8.7526628e-08  1.3598027e-06  0.00018924576  15.162331      174.33634      15.162331      174.33634     -8.6424915      221.94598      0.56216086   
+      5000   37.493536      0.088079973    0.016750669    9.4805488e-05  9.3831146e-05 -8.4903303e-06  1.8173942e-06  2.4911902e-06  2.8126081e-07  0.00020093088  18.58796       167.48508      18.58796       167.48508     -10.914841      226.49068      0.58068415   
+      6000   36.018024      0.10242593     0.022678356    0.00010986879  0.00010802458 -1.468697e-05   9.5507269e-07  2.2742807e-06  4.6214431e-08  0.00021333751  21.878965      160.90307      21.878965      160.90307     -13.23372       231.12844      0.59896738   
+      7000   39.757919      0.11762695     0.028508725    0.00012289788  0.00011811566 -7.8029455e-06  7.9117305e-07  4.700256e-06  -1.9264625e-06  0.0002265102   25.040637      154.57973      25.040637      154.57973     -15.600082      235.86116      0.61410978   
+      8000   41.299481      0.13220307     0.033506893    0.00013254365  0.00012523162  2.9356316e-05 -1.174451e-06   5.8484867e-06 -1.5223688e-07  0.00024049624  28.078057      148.50489      28.078057      148.50489     -18.014899      240.6908       0.62479919   
+      9000   38.979136      0.14624266     0.037128925    0.00014142241  0.0001300902   7.818445e-05  -9.2661419e-07  8.2474497e-06  2.4100959e-06  0.00025534587  30.99611       142.66878      30.99611       142.66878     -20.479163      245.61933      0.63206254   
+     10000   35.62075       0.16065036     0.039121175    0.00014750026  0.00013402815  0.00012756966 -2.09248e-06    1.8740396e-06 -1.7933963e-06  0.0002711124   33.799486      137.06203      33.799486      137.06203     -22.993887      250.64877      0.6364469    
+     11000   42.298279      0.17444941     0.041068998    0.00016562955  0.00014228115  0.00022877442  4.1222304e-07 -7.5485673e-07 -7.3421176e-06  0.00028785244  36.492692      131.67562      36.492692      131.67562     -25.560104      255.78121      0.63806109   
+     12000   40.153422      0.18850532     0.042238952    0.00018343368  0.00015938994  0.00029163306  1.1376981e-06  6.5631947e-06 -1.9006063e-06  0.00030562611  39.080057      126.50089      39.080057      126.50089     -28.178869      261.01874      0.63956016   
+     13000   41.266419      0.20078224     0.04403387     0.00019551918  0.00017163971  0.00033974602 -3.8364013e-07  9.4139309e-06 -2.9712096e-06  0.00032449723  41.565741      121.52952      41.565741      121.52952     -30.851256      266.36351      0.64301446   
+     14000   39.047817      0.21119115     0.047988043    0.00021523675  0.00020461961  0.00039096088 -1.7980865e-06  4.042864e-07   8.2186443e-06  0.00034453356  43.953741      116.75352      43.953741      116.75352     -33.578365      271.81773      0.64930954   
+     15000   43.650017      0.22069458     0.052691067    0.00022932997  0.00021399814  0.00039581051 -4.8130138e-06 -1.0092442e-06  4.3534091e-06  0.00036580705  46.247894      112.16521      46.247894      112.16521     -36.361317      277.38363      0.65908025   
+     16000   39.06892       0.23160868     0.05852991     0.00025007444  0.00024747079  0.00038379423  1.8813494e-06 -1.0435827e-07 -3.0817316e-06  0.00038839408  48.451888      107.75722      48.451888      107.75722     -39.201253      283.06351      0.67043688   
+     17000   42.53572       0.23732377     0.065393955    0.00028885164  0.00024848581  0.00036869854 -2.5757984e-06 -6.9642489e-06  8.4687774e-07  0.00041237577  50.569268      103.52246      50.569268      103.52246     -42.099342      288.85968      0.68188889   
+     18000   43.080995      0.2444202      0.071417714    0.00032069857  0.0002837658   0.00034786464 -2.3663967e-06 -3.9681286e-06  1.9952878e-06  0.00043783823  52.603437      99.454126      52.603437      99.454126     -45.056773      294.77455      0.69240743   
+     19000   39.567549      0.25359296     0.074154047    0.00034497956  0.00029171175  0.00030955464  1.3202344e-05 -1.8254284e-07 -2.8818225e-06  0.00046487289  54.557665      95.54567       54.557665      95.54567      -48.074763      300.81053      0.70199852   
+     20000   40.592416      0.26557289     0.072338184    0.00035424083  0.00032595741  0.00027807035  1.5165729e-05 -1.6309599e-05  2.0498912e-06  0.00049357682  56.435093      91.790813      56.435093      91.790813     -51.154551      306.9701       0.70838111   
+     21000   45.949679      0.28255965     0.065261766    0.0004064601   0.00036222553  0.00026801727  1.546806e-06  -1.787964e-07  -1.3819347e-05  0.0005240531   58.238741      88.183518      58.238741      88.183518     -54.297403      313.25581      0.71101391   
+     22000   97.861297      0.29760325     0.053231724    0.00043330475  0.00042592385  0.00030621485  1.1348861e-05 -2.7794419e-06 -3.1287003e-06  0.00055641116  59.971506      84.717987      59.971506      84.717987     -57.504609      319.67022      0.71165698   
+     23000   43.695701      0.31853473     0.031477372    0.00040624064  0.00038365665  0.00033085831  8.3268455e-06 -2.4818165e-06 -5.3788393e-06  0.0005907672   61.636176      81.388648      61.636176      81.388648     -60.777488      326.21598      0.71113818   
+     24000   44.801391      0.34136586     0.0035111624   0.00044131044  0.00039416054  0.00038349315 -2.7769837e-05 -1.7295299e-05  2.279719e-05   0.00062724457  63.235425      78.190149      63.235425      78.190149     -64.117385      332.89577      0.7118697    
+     25000   81.644905      0.36622404    -0.030271016    0.00052431256  0.00041725783  0.00041496714 -3.3057722e-05  1.6502418e-06 -4.7888813e-06  0.00066597427  64.771826      75.117348      64.771826      75.117348     -67.525671      339.71234      0.71411224   
+     26000   71.147458      0.39422096    -0.070433592    0.00057119346  0.00040246983  0.00044335422 -1.6135852e-05  1.7040989e-05 -1.1648627e-05  0.00070709536  66.247847      72.165305      66.247847      72.165305     -71.003748      346.6685       0.71764674   
+     27000   58.64853       0.42266076    -0.11485744     0.00041616834  0.00042655042  0.00047366606 -5.8556325e-05  4.1684483e-05  2.5535641e-07  0.0007507555   67.665862      69.329275      67.665862      69.329275     -74.553043      353.76709      0.7253266    
+     28000   71.460895      0.44881484    -0.16190198     0.00056069725  0.00047159498  0.00034162817  1.4638733e-05  6.8375112e-05  3.9493242e-05  0.00079711148  69.028151      66.604698      69.028151      66.604698     -78.175016      361.01103      0.73626581   
+     29000   73.145425      0.47911728    -0.21468945     0.00055291375  0.00039756056  0.00032125335  3.5266781e-06 -3.9474757e-06  3.1204197e-05  0.00084632974  70.336902      63.987195      70.336902      63.987195     -81.871155      368.40331      0.74874502   
+     30000   69.713698      0.50905232    -0.27081867     0.0003612614   0.0003945672   0.00020883837  1.7573188e-05 -1.4281522e-05 -6.5917693e-06  0.00089858702  71.594221      61.472557      71.594221      61.472557     -85.642978      375.94696      0.76116719   
+     31000   75.283695      0.53744219    -0.33069836     0.00031887919  0.0002737551   0.00014489459  2.9442942e-05  4.6860047e-05  3.7107413e-05  0.00095407096  72.802129      59.056742      72.802129      59.056742     -89.492035      383.64507      0.77192673   
+     32000   72.200462      0.57177353    -0.39679103     0.00027068599  0.00035847932  8.0881529e-06  1.7620389e-05 -4.4915664e-05 -1.8742712e-05  0.0010129808   73.962567      56.735866      73.962567      56.735866     -93.419908      391.50082      0.78109645   
+     33000   96.507606      0.60405694    -0.46517562     0.00053731227  0.00062854137  1.236286e-05   6.0274859e-05 -1.0809654e-05  3.5242541e-06  0.0010755281   75.0774        54.506199      75.0774        54.506199     -97.42821       399.51742      0.78922084   
+     34000   113.13777      0.64451686    -0.5485952      0.00033551718  0.00039452779 -0.00010275503  0.00014185786 -2.4635164e-05 -2.7249243e-05  0.0011419374   76.148422      52.364155      76.148422      52.364155     -101.51859      407.69818      0.79676638   
+     35000   78.106473      0.68805292    -0.63637067     0.00047519659  0.00049081239 -4.0149199e-05  0.00019721559 -0.00021253827 -5.1267137e-05  0.0012124472   77.177354      50.306292      77.177354      50.306292     -105.69272      416.04645      0.80211846   
+     36000   95.737983      0.73327473    -0.73073039     0.00051764752  0.00078280307 -6.103486e-05  -1.9264595e-05 -0.00018147441  0.00014194534  0.0012873107   78.165849      48.329301      78.165849      48.329301     -109.95233      424.56566      0.80581882   
+     37000   95.34126       0.78221567    -0.83187665     0.0003376438   0.00055228561 -6.2373121e-06  0.00018079383  2.3911889e-06 -0.00011062765  0.0013667967   79.115498      46.430004      79.115498      46.430004     -114.29916      433.25932      0.81430671   
+     38000   96.675077      0.82471722    -0.93192327     0.00047935908  0.00031867505  7.7900439e-05  6.1165158e-05  7.3111252e-06 -0.00029875268  0.0014511906   80.027826      44.605348      80.027826      44.605348     -118.735        442.131        0.82582827   
+     39000   152.04445      0.86264222    -1.0302828      0.00077853705  0.00014562212  1.9333041e-05 -7.7429116e-05 -0.00021660265  0.0001008944   0.0015407954   80.904301      42.852399      80.904301      42.852399     -123.26167      451.18434      0.83935265   
+     40000   70.570649      0.9084473     -1.1382632     -0.00020395727 -0.00012814516 -0.00027438611  1.1096828e-05  3.7219215e-05 -9.8803394e-05  0.001635933    81.746331      41.168339      81.746331      41.168339     -127.88103      460.42306      0.85525325   
+     41000   101.02839      0.94310407    -1.2409796     -0.00063484507 -0.0006040982  -0.00035155057  0.00020864414 -0.00013745006 -0.00012102926  0.001736945    82.55527       39.550461      82.55527       39.550461     -132.59498      469.85096      0.86941263   
+     42000   153.38092      0.97562006    -1.3459675     -0.00030595491 -0.00065595655 -0.000303061    0.00022419089 -0.00035540535 -6.9173225e-05  0.001844194    83.332418      37.996164      83.332418      37.996164     -137.40545      479.47191      0.88087409   
+     43000   103.08648      1.0267407     -1.4861485     -0.0010580264  -0.00065172439 -0.0008356257  -0.00032128376 -0.0004472802  -0.0002602661   0.0019580651   84.079025      36.50295       84.079025      36.50295      -142.31443      489.28986      0.88950955   
+     44000   119.557        1.0874067     -1.6354072     -0.00085811613 -0.00072202175 -0.00019268019  0.00020720974 -0.00021193492 -0.00047288414  0.0020789674   84.796291      35.068417      84.796291      35.068417     -147.32392      499.30885      0.89820234   
+     45000   89.55891       1.1435891     -1.7877187     -0.0010081928  -0.00073157758 -0.00096522858  0.00083464924 -1.216873e-05  -6.6293048e-05  0.0022073348   85.48537       33.690261      85.48537       33.690261     -152.436        509.533        0.90709234   
+     46000   127.66516      1.1976482     -1.9429875     -0.0017543164  -0.00055199044 -0.0015472542   0.00086391486 -1.9963919e-05  0.00029724228  0.0023436284   86.147368      32.366264      86.147368      32.366264     -157.65275      519.9665       0.91525181   
+     47000   114.34154      1.2495913     -2.0962985     -0.0021392844  -0.00037208111 -0.0010006044   0.00022895845 -0.0003391958   0.00030830056  0.0024883375   86.78335       31.0943        86.78335       31.0943       -162.97632      530.61364      0.92309288   
+     48000   117.03225      1.2956046     -2.2548904     -0.0026751938  -0.00056021945 -0.00068182824  0.00028609118 -0.00090549883  0.00065621939  0.0026419818   87.394339      29.872323      87.394339      29.872323     -168.4089       541.4788       0.93434821   
+     49000   164.64606      1.3497932     -2.426594      -0.0022098053  -0.0012411682  -0.00067864446  0.00020776701  0.00035248258 -3.9786834e-05  0.002805113    87.981316      28.698368      87.981316      28.698368     -173.95272      552.56645      0.9467493    
+     50000   155.03738      1.413115      -2.6098574     -0.0026797594  -0.002696012   -0.001987149   -0.00014683488 -0.00069790742  0.00033046497  0.0029783169   88.545226      27.570548      88.545226      27.570548     -179.61006      563.88113      0.96192206   
+Loop time of 45.8662 on 2 procs for 50000 steps with 6750 atoms
+
+Performance: 9418.695 tau/day, 1090.127 timesteps/s
+99.3% CPU use with 2 MPI tasks x 1 OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 21.737     | 21.959     | 22.181     |   4.7 | 47.88
+Bond    | 1.8604     | 1.9002     | 1.94       |   2.9 |  4.14
+Neigh   | 5.8245     | 5.8293     | 5.8341     |   0.2 | 12.71
+Comm    | 2.9312     | 3.5114     | 4.0915     |  31.0 |  7.66
+Output  | 0.25021    | 0.2512     | 0.25218    |   0.2 |  0.55
+Modify  | 10.969     | 11.572     | 12.174     |  17.7 | 25.23
+Other   |            | 0.8436     |            |       |  1.84
+
+Nlocal:           3375 ave        3431 max        3319 min
+Histogram: 1 0 0 0 0 0 0 0 0 1
+Nghost:         3397.5 ave        3411 max        3384 min
+Histogram: 1 0 0 0 0 0 0 0 0 1
+Neighs:          38759 ave       38772 max       38746 min
+Histogram: 1 0 0 0 0 0 0 0 0 1
+FullNghs:            0 ave           0 max           0 min
+Histogram: 2 0 0 0 0 0 0 0 0 0
+
+Total # of neighbors = 77518
+Ave neighs/atom = 11.484148
+Ave special neighs/atom = 1
+Neighbor list builds = 3098
+Dangerous builds = 0
+Changing box ...
+  orthogonal box = (0 88.545226 -179.61006) to (27.570548 116.11577 384.27106)
+  orthogonal box = (0 0 -179.61006) to (27.570548 27.570548 384.27106)
+  orthogonal box = (0 0 0) to (27.570548 27.570548 563.88113)
+----------------------------------------------------------
+Using INTEL Package without Coprocessor.
+Compiler: Intel Classic C++ 19.10.0 / Intel(R) C++ g++ 8.5 mode
+SIMD compiler directives: Enabled
+Precision: mixed
+----------------------------------------------------------
+Generated 0 of 36 mixed pair_coeff terms from geometric mixing rule
+Setting up Verlet run ...
+  Unit style    : lj
+  Current step  : 50000
+  Time step     : 0.0001
+Per MPI rank memory allocation (min/avg/max) = 35.34 | 37.24 | 39.15 Mbytes
+   Step          Fmax           Temp          PotEng          Pxx            Pyy            Pzz            Pxy            Pxz            Pyz          Density      v_avgmolgyr  
+     50000   141.44246      1.413115      -2.6099474     -0.0026691519  -0.0026863275  -0.0019872326  -0.00014676848 -0.00069786452  0.00033046382  0.0029783169   0.96192206   
+     60000   205.60701      2.0696693     -3.808786      -0.00094409998 -0.0014249608   0.0022440916   0.0025380889  -0.00075896785 -0.000392939    0.0029783169   1.0778258    
+WARNING: FENE bond too long: 61238 3117 3118 21.382976 16.644 22.356151 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61239 3117 3118 21.382596 16.644 22.35577 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61240 3117 3118 21.38219 16.644 22.355364 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61241 3117 3118 21.381755 16.644 22.354929 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61242 3117 3118 21.381293 16.644 22.354467 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61243 3117 3118 21.380806 16.644 22.35398 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61244 3117 3118 21.380292 16.644 22.353467 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61245 3117 3118 21.379752 16.644 22.352927 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61246 3117 3118 21.379185 16.644 22.352359 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61247 3117 3118 21.378591 16.644 22.351766 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61248 3117 3118 21.377972 16.644 22.351147 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61249 3117 3118 21.377326 16.644 22.350501 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61250 3117 3118 21.376655 16.644 22.349829 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61251 3117 3118 21.375956 16.644 22.34913 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61252 3117 3118 21.375232 16.644 22.348406 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61253 3117 3118 21.37448 16.644 22.347655 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61254 3117 3118 21.373705 16.644 22.346879 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61255 3117 3118 21.372902 16.644 22.346077 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61256 3117 3118 21.372075 16.644 22.34525 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61257 3117 3118 21.371221 16.644 22.344396 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61258 3117 3118 21.37034 16.644 22.343514 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61259 3117 3118 21.369432 16.644 22.342606 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61260 3117 3118 21.368497 16.644 22.341671 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61261 3117 3118 21.367533 16.644 22.340708 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61262 3117 3118 21.366545 16.644 22.339719 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61263 3117 3118 21.365529 16.644 22.338704 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61264 3117 3118 21.364487 16.644 22.337662 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61265 3117 3118 21.363416 16.644 22.336591 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61266 3117 3118 21.362319 16.644 22.335494 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61267 3117 3118 21.361196 16.644 22.33437 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61268 3117 3118 21.360043 16.644 22.333218 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61269 3117 3118 21.358865 16.644 22.33204 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61270 3117 3118 21.357662 16.644 22.330836 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61271 3117 3118 21.356433 16.644 22.329607 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61272 3117 3118 21.355177 16.644 22.328352 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61273 3117 3118 21.353897 16.644 22.327071 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61274 3117 3118 21.35259 16.644 22.325764 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61275 3117 3118 21.351258 16.644 22.324433 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61276 3117 3118 21.349902 16.644 22.323077 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61277 3117 3118 21.348522 16.644 22.321696 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61278 3117 3118 21.347117 16.644 22.320291 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61279 3117 3118 21.345689 16.644 22.318863 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61280 3117 3118 21.344233 16.644 22.317407 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61281 3117 3118 21.342751 16.644 22.315925 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61282 3117 3118 21.341243 16.644 22.314418 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61283 3117 3118 21.339707 16.644 22.312882 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61284 3117 3118 21.338147 16.644 22.311321 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61285 3117 3118 21.336558 16.644 22.309733 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61286 3117 3118 21.334945 16.644 22.308119 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61287 3117 3118 21.333307 16.644 22.306481 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61288 3117 3118 21.331644 16.644 22.304818 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61289 3117 3118 21.329953 16.644 22.303127 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61290 3117 3118 21.328237 16.644 22.301411 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61291 3117 3118 21.326495 16.644 22.29967 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61292 3117 3118 21.32473 16.644 22.297904 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61293 3117 3118 21.322937 16.644 22.296112 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61294 3117 3118 21.321118 16.644 22.294292 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61295 3117 3118 21.31927 16.644 22.292444 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61296 3117 3118 21.317397 16.644 22.290572 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61297 3117 3118 21.315501 16.644 22.288676 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61298 3117 3118 21.31358 16.644 22.286755 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61299 3117 3118 21.311633 16.644 22.284807 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61300 3117 3118 21.309659 16.644 22.282833 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61301 3117 3118 21.30766 16.644 22.280835 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61302 3117 3118 21.305637 16.644 22.278811 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61303 3117 3118 21.303586 16.644 22.276761 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61304 3117 3118 21.301512 16.644 22.274687 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61305 3117 3118 21.299415 16.644 22.272589 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61306 3117 3118 21.297293 16.644 22.270468 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61307 3117 3118 21.295145 16.644 22.268319 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61308 3117 3118 21.292969 16.644 22.266144 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61309 3117 3118 21.29077 16.644 22.263945 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61310 3117 3118 21.288546 16.644 22.261721 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61311 3117 3118 21.286294 16.644 22.259469 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61312 3117 3118 21.284016 16.644 22.257191 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61313 3117 3118 21.281714 16.644 22.254889 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61314 3117 3118 21.279388 16.644 22.252562 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61315 3117 3118 21.277037 16.644 22.250212 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61316 3117 3118 21.274661 16.644 22.247835 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61317 3117 3118 21.272256 16.644 22.24543 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61318 3117 3118 21.269826 16.644 22.243001 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61319 3117 3118 21.26737 16.644 22.240544 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61320 3117 3118 21.264888 16.644 22.238063 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61321 3117 3118 21.262382 16.644 22.235557 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61322 3117 3118 21.25985 16.644 22.233025 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61323 3117 3118 21.257294 16.644 22.230468 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61324 3117 3118 21.254711 16.644 22.227886 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61325 3117 3118 21.252102 16.644 22.225276 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61326 3117 3118 21.249466 16.644 22.222641 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61327 3117 3118 21.246804 16.644 22.219979 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61328 3117 3118 21.244113 16.644 22.217288 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61329 3117 3118 21.241395 16.644 22.214569 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61330 3117 3118 21.238649 16.644 22.211823 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61331 3117 3118 21.235875 16.644 22.20905 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61332 3117 3118 21.233076 16.644 22.206251 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61333 3117 3118 21.230253 16.644 22.203428 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61334 3117 3118 21.227407 16.644 22.200582 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61335 3117 3118 21.224535 16.644 22.197709 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61336 3117 3118 21.221636 16.644 22.194811 (src/MOLECULE/bond_fene_expand3.cpp:86)
+WARNING: FENE bond too long: 61337 3117 3118 21.218708 16.644 22.191883 (src/MOLECULE/bond_fene_expand3.cpp:86)
+ERROR on proc 1: Bond atoms 359 360 missing on proc 1 at step 76001 (src/ntopo_bond_all.cpp:59)
+Last command: run		2000000000
+Abort(1) on node 1 (rank 1 in comm 0): application called MPI_Abort(MPI_COMM_WORLD, 1) - process 1
+In: PMI_Abort(1, application called MPI_Abort(MPI_COMM_WORLD, 1) - process 1)
+slurmstepd: error: *** STEP 55826682.0 ON della-r3c1n13 CANCELLED AT 2024-04-19T22:44:39 ***
+srun: Job step aborted: Waiting up to 47 seconds for job step to finish.
+srun: error: della-r3c1n13: task 0: Killed
+srun: Terminating StepId=55826682.0
+srun: error: della-r3c1n13: task 1: Exited with exit code 1
