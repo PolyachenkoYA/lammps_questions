@@ -1,0 +1,253 @@
+Removing intel-mpi for intel version 2021.1.1
+Removing intel version 2021.1.2
+
+Unloading /opt/intel/oneapi/compiler/2021.1.2/linux/lib/oclfpga/modulefiles/oclfpga
+  ERROR: No such file or directory on
+    '/opt/intel/oneapi/compiler/2021.1.2/linux/lib/oclfpga/modulefiles/oclfpga'
+
+Removing intel-dpl version 2021.1.2
+Removing intel-debugger version 10.0.0
+Removing intel-mkl version 2021.1.1
+Removing intel-tbb version 2021.1.1
+Removing intel-rt version 2021.1.2
+Loading intel/19.1.1.217
+  Loading requirement: intel-mkl/2020.1
+Loading intel-mpi/intel/2019.7
+  Loading requirement: ucx/1.9.0
+LAMMPS (19 Nov 2024)
+  using 1 OpenMP thread(s) per MPI task
+Created orthogonal box = (-5 -5 -5) to (5 5 5)
+  1 by 1 by 1 MPI processor grid
+Created 1 atoms
+  using lattice units in orthogonal box = (-5 -5 -5) to (5 5 5)
+  create_atoms CPU = 0.000 seconds
+Created 1 atoms
+  using lattice units in orthogonal box = (-5 -5 -5) to (5 5 5)
+  create_atoms CPU = 0.000 seconds
+----------------------------------------------------------------------
+Initializing the collective variables module, version 2024-06-04.
+Please cite Fiorin et al, Mol Phys 2013:
+  https://doi.org/10.1080/00268976.2013.813594
+as well as all other papers listed below for individual features used.
+This version was built with the C++11 standard or higher.
+Summary of compile-time features available in this build:
+  - SMP parallelism: enabled (num. threads = 1)
+  - Lepton custom functions: available
+  - Tcl interpreter: not available
+Using LAMMPS interface, version "2024-07-05".
+Setting initial step number from MD engine: 2140000000
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update: every = 1 steps, delay = 0 steps, check = yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 6
+  binsize = 3, bins = 4 4 4
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair zero, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d
+      bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 2140000000
+  Time step     : 1
+----------------------------------------------------------------------
+Reading new configuration from file "bigint.colvars":
+# units = "" [default]
+# smp = on [default]
+# colvarsTrajFrequency = 1000
+# colvarsRestartFrequency = 1000000
+# scriptedColvarForces = off [default]
+# scriptingAfterBiases = off [default]
+----------------------------------------------------------------------
+  Initializing a new collective variable.
+  # name = "one"
+  Initializing a new "distance" component.
+    # name = "" [default]
+    # componentCoeff = 1 [default]
+    # componentExp = 1 [default]
+    # period = 0 [default]
+    # wrapAround = 0 [default]
+    # forceNoPBC = off [default]
+    # scalable = on [default]
+      Initializing atom group "group1".
+      # name = "" [default]
+      # centerToOrigin = off [default]
+      # centerToReference = off [default]
+      # rotateToReference = off [default]
+      # atomsOfGroup = "" [default]
+      # indexGroup = "" [default]
+      # psfSegID =  [default]
+      # atomsFile = "" [default]
+      # dummyAtom = ( 0 , 0 , 0 ) [default]
+      # enableFitGradients = on [default]
+      # printAtomIDs = off [default]
+      Atom group "group1" defined with 1 atoms requested.
+      Initializing atom group "group2".
+      # name = "" [default]
+      # centerToOrigin = off [default]
+      # centerToReference = off [default]
+      # rotateToReference = off [default]
+      # atomsOfGroup = "" [default]
+      # indexGroup = "" [default]
+      # psfSegID =  [default]
+      # atomsFile = "" [default]
+      # dummyAtom = ( 0 , 0 , 0 ) [default]
+      # enableFitGradients = on [default]
+      # printAtomIDs = off [default]
+      Atom group "group2" defined with 1 atoms requested.
+    # oneSiteSystemForce = off [default]
+    # oneSiteTotalForce = off [default]
+  All components initialized.
+  # timeStepFactor = 1 [default]
+  # width = 1 [default]
+  # lowerBoundary = 0 [default]
+  # upperBoundary = 1 [default]
+  # hardLowerBoundary = on [default]
+  # hardUpperBoundary = off [default]
+  # expandBoundaries = off [default]
+  # extendedLagrangian = off [default]
+  # outputValue = on [default]
+  # outputVelocity = off [default]
+  # outputTotalForce = off [default]
+  # outputAppliedForce = off [default]
+  # subtractAppliedForce = off [default]
+  # runAve = off [default]
+  # corrFunc = off [default]
+----------------------------------------------------------------------
+Collective variables initialized, 1 in total.
+----------------------------------------------------------------------
+  Initializing a new "harmonic" instance.
+  # name = "h_pot"
+  # colvars = { one }
+  # stepZeroData = off [default]
+  # outputEnergy = off [default]
+  # outputFreq = 1000000 [default]
+  # timeStepFactor = 1 [default]
+  # writeTISamples = off [default]
+  # writeTIPMF = off [default]
+  # centers = { 4.5 }
+  # targetCenters = { 4.5 } [default]
+  # outputCenters = off [default]
+  # forceConstant = 10
+  # decoupling = off [default]
+  # targetForceConstant = -1 [default]
+  The force constant for colvar "one" will be rescaled to 10 according to the specified width (1).
+----------------------------------------------------------------------
+Collective variables biases initialized, 1 in total.
+----------------------------------------------------------------------
+Collective variables module (re)initialized.
+----------------------------------------------------------------------
+Current simulation parameters: initial step = 2140000000, integration timestep = 1
+Updating atomic parameters (masses, charges, etc).
+Re-initialized atom group for variable "one":0/0. 1 atoms: total mass = 1, total charge = 0.
+Re-initialized atom group for variable "one":0/1. 1 atoms: total mass = 1, total charge = 0.
+The final output state file will be "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Per MPI rank memory allocation (min/avg/max) = 3.063 | 3.063 | 3.063 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+2140000000   0              0              0              0              0            
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2142000000   204.59729      0              0              0.60986565     27.878347    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2144000000   214.30622      0              0              0.63880614     29.201283    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2146000000   437.88125      0              0              1.3052408      59.66553     
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2148000000   1868.7643      0              0              5.5704315      254.63711    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2150000000   1152.3476      0              0              3.4349293      157.01844    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2152000000   4212.2091      0              0              12.555795      573.95399    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2154000000   1088.1346      0              0              3.2435225      148.2688     
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2156000000   3968.8565      0              0              11.830407      540.79485    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2158000000   515.71894      0              0              1.5372602      70.271663    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2160000000   2984.4817      0              0              8.8961729      406.66432    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2162000000   7407.3938      0              0              22.080034      1009.3286    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2164000000   6643.3505      0              0              19.802566      905.22037    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2166000000   5168.499       0              0              15.406314      704.25768    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2168000000   8677.528       0              0              25.866063      1182.3966    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2170000000   239.65122      0              0              0.71435477     32.654783    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2172000000   1089.3097      0              0              3.2470252      148.42891    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2174000000   362.8617       0              0              1.0816218      49.443395    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2176000000   8337.3442      0              0              24.852039      1136.0433    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2178000000   1895.4782      0              0              5.6500606      258.27713    
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Saving collective variables state to "out.colvars.state".
+2180000000   12092.448      0              0              36.04529       1647.7123    
+srun: Job step aborted: Waiting up to 47 seconds for job step to finish.
+slurmstepd: error: *** JOB 61064970 ON della-h12n17 CANCELLED AT 2024-12-13T14:00:26 ***

@@ -1,0 +1,169 @@
+LAMMPS (23 Jun 2022 - Update 3)
+  using 1 OpenMP thread(s) per MPI task
+units real
+#processors 2 * *
+atom_modify map yes
+region box block -5 5 -5 5 -5 5
+create_box 1 box
+Created orthogonal box = (-5 -5 -5) to (5 5 5)
+  1 by 1 by 1 MPI processor grid
+create_atoms 1 single -2.5 0.0 0.0
+Created 1 atoms
+  using lattice units in orthogonal box = (-5 -5 -5) to (5 5 5)
+  create_atoms CPU = 0.000 seconds
+create_atoms 1 single  2.5 0.0 0.0
+Created 1 atoms
+  using lattice units in orthogonal box = (-5 -5 -5) to (5 5 5)
+  create_atoms CPU = 0.000 seconds
+mass 1 1.0
+
+pair_style zero 4.0
+pair_coeff 1 1
+
+reset_timestep $(2.14e9)
+reset_timestep 2140000000
+
+fix 1 all nve
+fix 2 all colvars bigint.colvars
+
+thermo 2000000
+
+run 2000000000
+Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 6
+  ghost atom cutoff = 6
+  binsize = 3, bins = 4 4 4
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair zero, perpetual
+      attributes: half, newton on
+      pair build: half/bin/atomonly/newton
+      stencil: half/bin/3d
+      bin: standard
+colvars: Creating proxy instance
+colvars: ----------------------------------------------------------------------
+colvars: Initializing the collective variables module, version 2022-05-24.
+colvars: Please cite Fiorin et al, Mol Phys 2013:
+colvars:   https://doi.org/10.1080/00268976.2013.813594
+colvars: as well as all other papers listed below for individual features used.
+colvars: SMP parallelism is enabled; if needed, use "smp off" to override this.
+colvars: This version was built with the C++11 standard or higher.
+colvars: Using LAMMPS interface, version "2022-05-09".
+colvars: ----------------------------------------------------------------------
+colvars: Reading new configuration from file "bigint.colvars":
+colvars: # units = "" [default]
+colvars: # smp = on [default]
+colvars: # colvarsTrajFrequency = 1000
+colvars: # colvarsRestartFrequency = 1000000
+colvars: # scriptedColvarForces = off [default]
+colvars: # scriptingAfterBiases = off [default]
+colvars: ----------------------------------------------------------------------
+colvars:   Initializing a new collective variable.
+colvars:   # name = "one"
+colvars:   Initializing a new "distance" component.
+colvars:     # name = "" [default]
+colvars:     # componentCoeff = 1 [default]
+colvars:     # componentExp = 1 [default]
+colvars:     # period = 0 [default]
+colvars:     # wrapAround = 0 [default]
+colvars:     # forceNoPBC = off [default]
+colvars:     # scalable = on [default]
+colvars:       Initializing atom group "group1".
+colvars:       # name = "" [default]
+colvars:       # centerToOrigin = off [default]
+colvars:       # centerToReference = off [default]
+colvars:       # rotateToReference = off [default]
+colvars:       # atomsOfGroup = "" [default]
+colvars:       # indexGroup = "" [default]
+colvars:       # psfSegID =  [default]
+colvars:       # atomsFile = "" [default]
+colvars:       # dummyAtom = ( 0 , 0 , 0 ) [default]
+colvars:       # enableFitGradients = on [default]
+colvars:       # printAtomIDs = off [default]
+colvars:       Atom group "group1" defined with 1 atoms requested.
+colvars:       Initializing atom group "group2".
+colvars:       # name = "" [default]
+colvars:       # centerToOrigin = off [default]
+colvars:       # centerToReference = off [default]
+colvars:       # rotateToReference = off [default]
+colvars:       # atomsOfGroup = "" [default]
+colvars:       # indexGroup = "" [default]
+colvars:       # psfSegID =  [default]
+colvars:       # atomsFile = "" [default]
+colvars:       # dummyAtom = ( 0 , 0 , 0 ) [default]
+colvars:       # enableFitGradients = on [default]
+colvars:       # printAtomIDs = off [default]
+colvars:       Atom group "group2" defined with 1 atoms requested.
+colvars:     # oneSiteSystemForce = off [default]
+colvars:     # oneSiteTotalForce = off [default]
+colvars:   All components initialized.
+colvars:   # timeStepFactor = 1 [default]
+colvars:   # width = 1 [default]
+colvars:   # lowerBoundary = 0 [default]
+colvars:   # upperBoundary = 1 [default]
+colvars:   # hardLowerBoundary = on [default]
+colvars:   # hardUpperBoundary = off [default]
+colvars:   # expandBoundaries = off [default]
+colvars:   # extendedLagrangian = off [default]
+colvars:   # outputValue = on [default]
+colvars:   # outputVelocity = off [default]
+colvars:   # outputTotalForce = off [default]
+colvars:   # outputAppliedForce = off [default]
+colvars:   # subtractAppliedForce = off [default]
+colvars:   # runAve = off [default]
+colvars:   # corrFunc = off [default]
+colvars: ----------------------------------------------------------------------
+colvars: Collective variables initialized, 1 in total.
+colvars: ----------------------------------------------------------------------
+colvars:   Initializing a new "harmonic" instance.
+colvars:   # name = "h_pot"
+colvars:   # colvars = { one }
+colvars:   # stepZeroData = off [default]
+colvars:   # outputEnergy = off [default]
+colvars:   # outputFreq = 1000000 [default]
+colvars:   # timeStepFactor = 1 [default]
+colvars:   # writeTISamples = off [default]
+colvars:   # writeTIPMF = off [default]
+colvars:   # centers = { 4.5 }
+colvars:   # targetCenters = { 4.5 } [default]
+colvars:   # outputCenters = off [default]
+colvars:   # forceConstant = 10
+colvars:   # targetForceConstant = -1 [default]
+colvars:   The force constant for colvar "one" will be rescaled to 10 according to the specified width (1).
+colvars: ----------------------------------------------------------------------
+colvars: Collective variables biases initialized, 1 in total.
+colvars: ----------------------------------------------------------------------
+colvars: Collective variables module (re)initialized.
+colvars: ----------------------------------------------------------------------
+colvars: The restart output state file will be "rest.colvars.state".
+colvars: The final output state file will be "out.colvars.state".
+colvars: Opening trajectory file "out.colvars.traj".
+colvars: Setting initial step number from LAMMPS: 2140000000
+colvars: Re-initialized atom group for variable "one":0/0. 1 atoms: total mass = 1, total charge = 0.
+colvars: Re-initialized atom group for variable "one":0/1. 1 atoms: total mass = 1, total charge = 0.
+colvars: Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+Per MPI rank memory allocation (min/avg/max) = 3.063 | 3.063 | 3.063 Mbytes
+   Step          Temp          E_pair         E_mol          TotEng         Press     
+2140000000   0              0              0              0              0            
+colvars: Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+colvars: Saving collective variables state to "rest.colvars.state".
+colvars: Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+colvars: Saving collective variables state to "rest.colvars.state".
+2142000000   204.59729      0              0              0.60986565     27.878347    
+colvars: Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+colvars: Saving collective variables state to "rest.colvars.state".
+colvars: Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+colvars: Saving collective variables state to "rest.colvars.state".
+2144000000   418.26615      0              0              1.2467719      56.992784    
+colvars: Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+colvars: Saving collective variables state to "rest.colvars.state".
+colvars: Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+colvars: Saving collective variables state to "rest.colvars.state".
+2146000000   223.14266      0              0              0.66514588     30.405332    
+colvars: Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
+colvars: Saving collective variables state to "rest.colvars.state".
+2148000000   0.82227745     0              0              0.0024510529   0.11204321   
+2150000000   186.08837      0              0              0.55469409     25.35633     
+2152000000 
