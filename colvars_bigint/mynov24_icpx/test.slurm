@@ -12,11 +12,11 @@
 #SBATCH --constraint=cascade,skylake
 
 module purge
-module load intel/19.1.1.217
-module load intel-mpi/intel/2019.7
-#module load intel/2024.0
-#module load intel-mpi/intel/2021.7.0
-#module load intel-mkl/2024.0
+#module load intel/19.1.1.217
+#module load intel-mpi/intel/2019.7
+module load intel/2024.0
+module load intel-mpi/intel/2021.7.0
+module load intel-mkl/2024.0
 
 #export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
@@ -24,9 +24,8 @@ export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK
 
 #$HOME/.local/bin/lmp_della_2022_3_host
 #cmd=" lmp_della_2022_3_CV_my -in test.in "
-#cmd=" lmp_della_2024_CV_ser_my -in in.colvars-bigint "
+cmd=" lmp_della_2024_CV_ser_my -in in.colvars-bigint "
 #cmd=" /home/yp1065/software/lammps-static/bin/lmp -in in.colvars-bigint "
-cmd=" lmp_della_2024_CV_ser_icpc_my -in in.colvars-bigint "
 
 srun ${cmd} || ${cmd}
 ### 2 commands are because

@@ -1,0 +1,31 @@
+Colvarstrajfrequency  1000
+#Colvarsrestartfrequency 100000
+
+colvar {
+	name r
+	
+	distance {
+		group1 { atomNumbers 7 8 5 6 }
+		group2 { atomNumbers 1 2 }
+	}
+	
+	lowerboundary 0.0
+	upperboundary 24.65
+	width 0.05
+}
+
+harmonicWalls {
+	name wall
+	colvars r
+	upperWalls 4.1539854
+	upperWallConstant 0.000724402735162
+}
+
+
+abf {
+	name abf_r
+	colvars r
+	outputFreq 1000
+	fullSamples 1000
+	hideJacobian false
+}

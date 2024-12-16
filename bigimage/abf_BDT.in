@@ -1,0 +1,104 @@
+
+ package		intel 1
+# package		gpu 1 neigh no   # neigh no so make neighbour lists be computed on CPU because hybrid pair_style does not work with neib lists on GPU
+suffix		hybrid intel omp
+
+dimension	3
+boundary	p p p
+
+atom_style	angle
+	bond_style	fene/expand3
+	angle_style	 hybrid harmonic cosine
+pair_style	hybrid/overlay lj/cut 1. gauss 1.
+	special_bonds	fene
+neighbor	0.3 bin
+
+read_data	lattice.data
+include		coeffs.def
+pair_modify	shift yes
+
+timestep	0.005
+
+variable	Temp equal 1.0
+variable	Temp_tau equal 10.0
+	fix		fix_langevin all langevin ${Temp} ${Temp} ${Temp_tau} 9203
+	fix		fix_nve all nve
+#	fix		fix_nvt all nvt temp ${Temp} ${Temp} ${Temp_tau}
+
+velocity	all	create ${Temp} 9203 mom no rot no dist gaussian
+fix		fix_momentum all momentum 100 linear 1 1 1 angular rescale
+
+group		nonchromatin type 1 2 3 8
+compute		chunkmol nonchromatin chunk/atom molecule
+	compute		molgyr nonchromatin gyration/chunk chunkmol
+	variable	avgmolgyr equal ave(c_molgyr)
+	compute		angletheta nonchromatin angle/local theta
+###HAVEANGLESCMT	compute		avgangletheta nonchromatin reduce ave c_angletheta   # from lammps-23Jan2022
+	variable	avgangletheta equal ave(c_angletheta)
+
+variable	deformDumpstep equal 1000
+
+ group		bdtGroup id 7 8 5 6 1 2
+ compute		bdtAtompairs bdtGroup property/local patom1 patom2
+ compute		bdtDists bdtGroup pair/local dist
+#DUMPBDTDISTANCES dump		bdtDumpDeform  bdtGroup local 1000 BDT_dist_deform.dump index c_bdtAtompairs[1] c_bdtAtompairs[2] c_bdtDists[1]
+ dump		bdtDumpDeform  bdtGroup local 1000 BDT_dist_deform.dump index c_bdtAtompairs[1] c_bdtAtompairs[2] c_bdtDists
+
+# Change the box size to reach the required density:
+variable	Lz equal 28.8
+variable	Lxy equal 28.22022756
+variable	deformNsteps equal 30000   # BD_full
+variable	deformRxVar equal "ln(v_Lxy / lx) / (v_deformNsteps * dt)"
+variable	deformRyVar equal "ln(v_Lxy / ly) / (v_deformNsteps * dt)"
+variable	deformRzVar equal "ln(v_Lz / lz) / (v_deformNsteps * dt)"
+variable	deformRx equal ${deformRxVar}
+variable	deformRy equal ${deformRyVar}
+variable	deformRz equal ${deformRzVar}
+fix		fix_deform all deform 1 x trate ${deformRx} y trate ${deformRy} z trate ${deformRz}
+
+dump dumpDeform all xyz ${deformDumpstep} deform.xyz
+thermo		${deformDumpstep}
+#thermo_style	custom step fmax temp pe v_bdtDist  v_avgmolgyr
+thermo_style	custom step fmax temp pe pxx pyy pzz pxy pxz pyz density xlo lx ylo ly zlo lz  v_avgmolgyr
+thermo_modify	flush yes
+# cluster+deform might lead to infinite clustering loops, which is a confirmed bug, so we cannot print anything related to clusters here since it will triger clustering while defomring.
+log		deform.log
+
+run		${deformNsteps}
+change_box	all x final 0.0 ${Lxy} y final 0.0 ${Lxy} z final 0.0 ${Lz} remap    # exponential deform moves the box origin
+
+unfix		fix_deform
+undump		dumpDeform
+ undump		bdtDumpDeform
+
+#thermo_style	custom step temp pe v_bdtDist  v_avgmolgyr
+thermo_style	custom step temp pe  v_avgmolgyr
+
+log			prod.log
+
+	fix			abf all colvars abf_BDT.colvars tstat fix_langevin seed 9203 output abf
+#	fix			abf all colvars abf_BDT.colvars tstat fix_press seed 9203 output abf
+ dump		bdtDumpProd  bdtGroup local 1000 BDT_dist_prod.dump index c_bdtAtompairs[1] c_bdtAtompairs[2] c_bdtDists
+
+dump		dumpProd	all xyz 2000000 prod.xyz
+thermo		2000000
+thermo_modify	flush yes
+
+restart		1000000 prod_1.restart prod_2.restart
+
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000
+run			2000000000

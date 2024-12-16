@@ -1,30 +1,29 @@
+Removing intel-mpi for intel version 2021.1.1
+Removing intel version 2021.1.2
+
+Unloading /opt/intel/oneapi/compiler/2021.1.2/linux/lib/oclfpga/modulefiles/oclfpga
+  ERROR: No such file or directory on
+    '/opt/intel/oneapi/compiler/2021.1.2/linux/lib/oclfpga/modulefiles/oclfpga'
+
+Removing intel-dpl version 2021.1.2
+Removing intel-debugger version 10.0.0
+Removing intel-mkl version 2021.1.1
+Removing intel-tbb version 2021.1.1
+Removing intel-rt version 2021.1.2
+Loading intel/19.1.1.217
+  Loading requirement: intel-mkl/2020.1
+Loading intel-mpi/intel/2019.7
+  Loading requirement: ucx/1.9.0
 LAMMPS (29 Aug 2024 - Update 1)
   using 1 OpenMP thread(s) per MPI task
-units real
-#processors 2 * *
-atom_modify map yes
-region box block -5 5 -5 5 -5 5
-create_box 1 box
 Created orthogonal box = (-5 -5 -5) to (5 5 5)
   1 by 1 by 1 MPI processor grid
-create_atoms 1 single -2.5 0.0 0.0
 Created 1 atoms
   using lattice units in orthogonal box = (-5 -5 -5) to (5 5 5)
   create_atoms CPU = 0.000 seconds
-create_atoms 1 single  2.5 0.0 0.0
 Created 1 atoms
   using lattice units in orthogonal box = (-5 -5 -5) to (5 5 5)
   create_atoms CPU = 0.000 seconds
-mass 1 1.0
-
-pair_style zero 4.0
-pair_coeff 1 1
-
-reset_timestep $(2.14e9)
-reset_timestep 2140000000
-
-fix 1 all nve
-fix 2 all colvars bigint.colvars
 ----------------------------------------------------------------------
 Initializing the collective variables module, version 2024-06-04.
 Please cite Fiorin et al, Mol Phys 2013:
@@ -37,10 +36,6 @@ Summary of compile-time features available in this build:
   - Tcl interpreter: not available
 Using LAMMPS interface, version "2024-07-05".
 Setting initial step number from MD engine: 2140000000
-
-thermo 2000000
-
-run 2000000000
 Generated 0 of 0 mixed pair_coeff terms from geometric mixing rule
 Neighbor list info ...
   update: every = 1 steps, delay = 0 steps, check = yes
@@ -54,6 +49,10 @@ Neighbor list info ...
       pair build: half/bin/atomonly/newton
       stencil: half/bin/3d
       bin: standard
+Setting up Verlet run ...
+  Unit style    : real
+  Current step  : 2140000000
+  Time step     : 1
 ----------------------------------------------------------------------
 Reading new configuration from file "bigint.colvars":
 # units = "" [default]
@@ -243,59 +242,5 @@ Saving collective variables state to "out.colvars.state".
 Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
 Saving collective variables state to "out.colvars.state".
 Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2178000000   294.79317      0              0              0.87872246     40.168404    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2180000000   20.235563      0              0              0.060318369    2.75729      
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2182000000   115.29862      0              0              0.34368327     15.710545    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2184000000   394.0712       0              0              1.1746514      53.695989    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2186000000   311.36856      0              0              0.92813052     42.426959    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2188000000   28.929047      0              0              0.086231993    3.9418607    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2190000000   99.108692      0              0              0.29542419     13.504512    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2192000000   384.65987      0              0              1.146598       52.413606    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2194000000   327.14119      0              0              0.97514576     44.576133    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2196000000   39.039709      0              0              0.11636996     5.3195356    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-2198000000   83.784347      0              0              0.24974522     11.416423    
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective variables state to "out.colvars.state".
-Synchronizing (emptying the buffer of) trajectory file "out.colvars.traj".
-Saving collective va
+srun: Job step aborted: Waiting up to 47 seconds for job step to finish.
+slurmstepd: error: *** JOB 61074492 ON della-h17n2 CANCELLED AT 2024-12-13T22:08:04 ***
