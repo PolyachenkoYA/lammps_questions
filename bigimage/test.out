@@ -38,7 +38,7 @@ Finding 1-2 1-3 1-4 neighbors ...
     10 = max # of 1-2 neighbors
     10 = max # of special neighbors
   special bonds CPU = 0.000 seconds
-  read_data CPU = 0.030 seconds
+  read_data CPU = 0.003 seconds
 3 atoms in group nonchromatin
 6 atoms in group bdtGroup
 
@@ -132,21 +132,21 @@ Per MPI rank memory allocation (min/avg/max) = 23.4 | 23.4 | 23.4 Mbytes
      28000   64.677243      0.89988167     0.77542062    -0.0017952773   6.7188946e-05 -0.0072916897   0.00063657646 -0.00034819778  0.0010063819   0.0022146024   14.002513      29.594975      0.27074334     28.258513      0              28.8           1.7235521    
      29000   39.277077      1.022574       0.79811763     0.0036729142   0.0013735056  -0.0062498922   0.0018413603   0.00079262655 -0.00048592745  0.002269441    14.350286      28.899428      0.28031802     28.239364      0              28.8           1.3245412    
      30000   45.278425      0.99224797     0.80151258     0.0040197937   0.00038097229 -0.0066861831  -0.00032781362 -0.0014884139   0.0025179693   0.0023256375   14.689886      28.220228      0.28988622     28.220228      0              28.8           1.7482776    
-Loop time of 1.05402 on 1 procs for 30000 steps with 84 atoms
+Loop time of 0.98357 on 1 procs for 30000 steps with 84 atoms
 
-Performance: 12295730.477 tau/day, 28462.339 timesteps/s, 2.391 Matom-step/s
-99.6% CPU use with 1 MPI tasks x 1 OpenMP threads
+Performance: 13176483.872 tau/day, 30501.120 timesteps/s, 2.562 Matom-step/s
+99.5% CPU use with 1 MPI tasks x 1 OpenMP threads
 
 MPI task timing breakdown:
 Section |  min time  |  avg time  |  max time  |%varavg| %total
 ---------------------------------------------------------------
-Pair    | 0.18673    | 0.18673    | 0.18673    |   0.0 | 17.72
-Bond    | 0.13214    | 0.13214    | 0.13214    |   0.0 | 12.54
-Neigh   | 0.52449    | 0.52449    | 0.52449    |   0.0 | 49.76
-Comm    | 0.079598   | 0.079598   | 0.079598   |   0.0 |  7.55
-Output  | 0.0053243  | 0.0053243  | 0.0053243  |   0.0 |  0.51
-Modify  | 0.10342    | 0.10342    | 0.10342    |   0.0 |  9.81
-Other   |            | 0.02232    |            |       |  2.12
+Pair    | 0.17404    | 0.17404    | 0.17404    |   0.0 | 17.69
+Bond    | 0.12126    | 0.12126    | 0.12126    |   0.0 | 12.33
+Neigh   | 0.49255    | 0.49255    | 0.49255    |   0.0 | 50.08
+Comm    | 0.073004   | 0.073004   | 0.073004   |   0.0 |  7.42
+Output  | 0.004773   | 0.004773   | 0.004773   |   0.0 |  0.49
+Modify  | 0.097035   | 0.097035   | 0.097035   |   0.0 |  9.87
+Other   |            | 0.02092    |            |       |  2.13
 
 Nlocal:             84 ave          84 max          84 min
 Histogram: 1 0 0 0 0 0 0 0 0 0
@@ -307,350 +307,43 @@ Per MPI rank memory allocation (min/avg/max) = 27.86 | 27.86 | 27.86 Mbytes
    Step          Temp          PotEng      v_avgmolgyr  
      30000   0.99224797     0.80150809     1.7482776    
    2000000   0.97788579     0.70928088     0.88556105   
-   4000000   1.0640193      0.7889552      0.87015943   
-   6000000   0.87032106     0.90370547     0.90232725   
-   8000000   0.86323038     0.91676873     0.99886031   
-  10000000   0.91006353     0.8157675      0.91980162   
-terminate called after throwing an instance of 'LAMMPS_NS::LAMMPSAbortException'
-  what():  ERROR on proc 0: Atoms have moved too far apart (-460.8030648351642) for minimum image
- (src/domain.cpp:1241)
-Last command: run			2000000000
-
-/var/spool/slurmd/job61113074/slurm_script: line 24: 3071289 Aborted                 (core dumped) $cmd
-warning: the debug information found in "/opt/intel/oneapi/compiler/2024.0/lib/libiomp5.dbg" does not match "/opt/intel/oneapi/compiler/2024.0/lib/libiomp5.so" (CRC mismatch).
-
-[Thread debugging using libthread_db enabled]
-Using host libthread_db library "/lib64/libthread_db.so.1".
-LAMMPS (29 Aug 2024 - Update 1)
-  using 1 OpenMP thread(s) per MPI task
-Reading data file ...
-  orthogonal box = (0 0 0) to (57.6 28.8 28.8)
-  1 by 1 by 1 MPI processor grid
-WARNING: Atom style in data file bond differs from currently defined atom style angle (src/read_data.cpp:706)
-  reading atoms ...
-  84 atoms
-  scanning bonds ...
-  9 = max bonds/atom
-  scanning angles ...
-  13 = max angles/atom
-  orthogonal box = (0 0 0) to (57.6 28.8 28.8)
-  1 by 1 by 1 MPI processor grid
-  reading bonds ...
-  83 bonds
-  reading angles ...
-  117 angles
-Finding 1-2 1-3 1-4 neighbors ...
-  special bond factors lj:    0        1        1       
-  special bond factors coul:  0        1        1       
-    10 = max # of 1-2 neighbors
-    10 = max # of special neighbors
-  special bonds CPU = 0.000 seconds
-  read_data CPU = 0.033 seconds
-3 atoms in group nonchromatin
-6 atoms in group bdtGroup
-
-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
-
-Your simulation uses code contributions which should be cited:
-- Type Label Framework: https://doi.org/10.1021/acs.jpcb.3c08419
-The log file lists these citations in BibTeX format.
-
-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE-CITE
-
-----------------------------------------------------------
-Using INTEL Package without Coprocessor.
-Compiler: Intel LLVM C++ 202400.0 / Intel(R) oneAPI DPC++/C++ Compiler 2024.0.2 (2024.0.2.20231213)
-SIMD compiler directives: Enabled
-Precision: mixed
-----------------------------------------------------------
-Generated 17 of 21 mixed pair_coeff terms from geometric mixing rule
-Neighbor list info ...
-  update: every = 1 steps, delay = 0 steps, check = yes
-  max neighbors/atom: 11700, page size: 585000
-  master list distance cutoff = 4.4539854
-  ghost atom cutoff = 9.189
-  binsize = 2.2269927, bins = 26 13 13
-  6 neighbor lists, perpetual/occasional/extra = 4 2 0
-  (1) pair lj/cut, perpetual, skip from (6)
-      attributes: half, newton on, intel, cut 2.6720927
-      pair build: skip/intel
-      stencil: none
-      bin: none
-  (2) pair gauss, perpetual, skip from (5)
-      attributes: half, newton on
-      pair build: skip
-      stencil: none
-      bin: none
-  (3) compute property/local, occasional, copy from (5)
-      attributes: half, newton on
-      pair build: copy
-      stencil: none
-      bin: none
-  (4) compute pair/local, occasional, copy from (5)
-      attributes: half, newton on
-      pair build: copy
-      stencil: none
-      bin: none
-  (5) neighbor class addition, perpetual
-      attributes: half, newton on
-      pair build: half/bin/newton
-      stencil: half/bin/3d
-      bin: standard
-  (6) neighbor class addition, perpetual
-      attributes: half, newton on, intel, cut 2.6720927
-      pair build: half/bin/newton/intel
-      stencil: half/bin/3d/intel
-      bin: intel
-Setting up Verlet run ...
-  Unit style    : lj
-  Current step  : 0
-  Time step     : 0.005
-WARNING: Inconsistent image flags (src/domain.cpp:1051)
-Per MPI rank memory allocation (min/avg/max) = 23.4 | 23.4 | 23.4 Mbytes
-   Step          Fmax           Temp          PotEng          Pxx            Pyy            Pzz            Pxy            Pxz            Pyz          Density          Xlo             Lx            Ylo             Ly            Zlo             Lz        v_avgmolgyr  
-         0   15.254577      1              0.7231023     -0.0013128785  -0.0017952229  -0.0044153852  -0.00017605745  0.00025301021 -0.00020354592  0.0011164726   0              57.6           0              28.8           0              28.8           0.90286437   
-      1000   44.232259      0.7321264      0.83730253    -0.0019991265  -0.0010335029  -0.0027763081   0.001027667   -0.00089666255  0.0014327258   0.001144119    0.67686346     56.246273      0.0097581531   28.780484      0              28.8           1.2551747    
-      2000   32.743976      0.84586578     0.82235013    -0.0031618313  -0.000627447   -0.0031958696   0.000368751    0.0010152394   0.00022850414  0.00117245     1.3378191      54.924362      0.019509694    28.760981      0              28.8           1.3365932    
-      3000   79.296966      0.97840282     0.8425484     -0.00064143256 -0.001449029   -0.0024330458  -0.00062377923  0.0029145127   0.00022184926  0.0012014826   1.9832409      53.633518      0.029254626    28.741491      0              28.8           0.92755832   
-      4000   78.873967      1.0495118      0.85102402     0.00021234159 -0.00068320326 -0.0040637344  -0.00051221094  0.0014555804  -0.00060497945  0.001231234    2.6134938      52.373012      0.038992955    28.722014      0              28.8           1.0285706    
-      5000   35.438455      0.9635539      1.0025053     -0.00029743695 -0.0028122977  -0.004788275   -0.0012868606   0.0023697394  -5.6189186e-05  0.0012617222   3.2289344      51.142131      0.048724684    28.702551      0              28.8           1.1317998    
-      6000   104.35705      1.0301206      0.80141125     0.0028038694  -0.00019913482 -0.0039619324  -0.0022999698  -0.00016285713 -0.0011428602   0.0012929653   3.8299108      49.940178      0.058449819    28.6831        0              28.8           0.90670625   
-      7000   37.00357       1.0095518      0.83126581    -0.00074715404 -0.0017537378  -0.0024202469   0.0010318212   0.0010162838  -0.00029584304  0.0013249821   4.4167629      48.766474      0.068168364    28.663663      0              28.8           0.8017755    
-      8000   51.906442      1.0182204      0.74617375    -0.0003522936  -0.00062579097  0.0024541601   8.5342289e-05  0.0016446452  -0.0030920081   0.0013577916   4.9898227      47.620355      0.077880323    28.644239      0              28.8           1.4023846    
-      9000   48.024956      1.1055443      0.86128656     0.001311751    0.00022733623 -0.00039700595 -0.0017326911   0.001057648   -4.5003072e-05  0.0013914137   5.5494144      46.501171      0.0875857      28.624829      0              28.8           0.94534655   
-     10000   53.587864      1.1002252      0.7224179     -0.0045346033   0.0027391505  -0.0014078892  -0.00010795711  0.0016249746   0.00047670288  0.0014258682   6.0958544      45.408291      0.097284501    28.605431      0              28.8           1.0214278    
-     11000   50.349009      0.94643349     0.72527462    -0.00076175813 -0.00051018103 -0.0039313774  -0.0013728052   0.0016786492  -0.0016844907   0.001461176    6.6294518      44.341096      0.10697673     28.586047      0              28.8           1.2816779    
-     12000   39.017814      0.8715985      0.79089748    -0.00033213782 -0.0026052949  -0.0019984071   0.0020412164   0.0014341779  -0.00073979784  0.001497358    7.1505086      43.298983      0.11666239     28.566675      0              28.8           0.75229976   
-     13000   51.339131      1.0143134      0.80633475     0.0022476288  -0.0026633906  -0.0034734747  -0.00040361959  0.00059008962 -0.0016881527   0.001534436    7.6593193      42.281361      0.12634149     28.547317      0              28.8           0.98845035   
-     14000   55.406652      1.1737156      0.88123985     0.00028045272 -0.00079828934 -0.0063723177  -0.00014025622  0.0013533137   1.4051316e-05  0.0015724322   8.1561719      41.287656      0.13601402     28.527972      0              28.8           1.4928023    
-     15000   59.536582      1.0592604      0.85262829    -0.00078016696 -0.00030948388 -0.0038939047   0.00061602317  0.0021634985   5.9133231e-05  0.0016113692   8.6413473      40.317305      0.14568001     28.50864       0              28.8           1.5019193    
-     16000   51.443212      0.99095499     0.64537434    -0.00071250535  0.0010014083  -0.0037113287  -0.0011793497   0.00043252976 -0.002312196    0.0016512703   9.1151201      39.36976       0.15533944     28.489321      0              28.8           1.1627593    
-     17000   50.887767      0.88766739     0.79933708     0.00082315625 -0.0017018148  -0.0048211      0.0011573098   0.00013774709  0.0010939635   0.0016921596   9.5777582      38.444484      0.16499233     28.470015      0              28.8           1.2394287    
-     18000   42.674692      0.97317415     0.83114436    -0.0011373211  -0.0010325861  -0.0039588047  -0.00026586939 -0.0015054478   0.001861774    0.0017340613   10.029523      37.540954      0.17463867     28.450723      0              28.8           1.2152993    
-     19000   50.83506       1.0808364      0.83393208     0.0046564669  -0.0019401314  -0.0039727842  -0.0027106523  -0.00081774988  0.0011100102   0.0017770006   10.470671      36.658658      0.18427848     28.431443      0              28.8           1.3902435    
-     20000   77.295145      0.93384086     0.79708133    -0.0029561004   0.0045438701  -0.0013412814   0.00062353007 -0.00056551378 -0.0011688292   0.0018210032   10.90145       35.797099      0.19391176     28.412176      0              28.8           1.3851911    
-     21000   43.060675      1.0273565      0.83262208    -0.0035728589  -0.00079516274 -0.0027318036   0.00237933     0.00064192899 -0.00017536742  0.0018660954   11.322106      34.955789      0.20353851     28.392923      0              28.8           1.1033967    
-     22000   53.707544      0.99576128     0.80452043    -0.00081523153  0.0021120372  -0.0048065616   0.0022719878  -0.00022257605 -0.00018266036  0.0019123042   11.732875      34.13425       0.21315874     28.373683      0              28.8           1.042923     
-     23000   50.115032      1.055411       0.80511973    -0.0013381469   0.0003977959  -0.0065322335  -0.00048091528  0.0019781049   0.00083991679  0.0019596572   12.13399       33.33202       0.22277244     28.354455      0              28.8           1.0969935    
-     24000   46.956168      0.9444648      0.76692286    -0.00018105224  0.0016418125  -0.0069190845  -0.00056908059 -8.8320479e-05 -0.0033872713   0.0020081828   12.525678      32.548644      0.23237963     28.335241      0              28.8           1.0113375    
-     25000   43.634582      0.98609085     0.85522811    -0.0033445234   0.0018644796  -0.0047263241   0.00059806726  0.0038585752  -0.0029388437   0.0020579099   12.90816       31.78368       0.24198031     28.316039      0              28.8           1.092195     
-     26000   70.677196      1.0512557      0.79072438     0.00035437086  0.00098063212 -0.0039161586   0.00033611548  0.0022681387   0.0016402136   0.0021088685   13.281653      31.036693      0.25157449     28.296851      0              28.8           1.1415073    
-     27000   45.481569      0.95939003     0.84581189    -0.00045845966 -0.00046916545 -0.0059225671   0.00028054264  0.0021651963   0.0004884876   0.0021610889   13.646369      30.307262      0.26116216     28.277676      0              28.8           1.5615741    
-     28000   64.677243      0.89988167     0.77542062    -0.0017952773   6.7188946e-05 -0.0072916897   0.00063657646 -0.00034819778  0.0010063819   0.0022146024   14.002513      29.594975      0.27074334     28.258513      0              28.8           1.7235521    
-     29000   39.277077      1.022574       0.79811763     0.0036729142   0.0013735056  -0.0062498922   0.0018413603   0.00079262655 -0.00048592745  0.002269441    14.350286      28.899428      0.28031802     28.239364      0              28.8           1.3245412    
-     30000   45.278425      0.99224797     0.80151258     0.0040197937   0.00038097229 -0.0066861831  -0.00032781362 -0.0014884139   0.0025179693   0.0023256375   14.689886      28.220228      0.28988622     28.220228      0              28.8           1.7482776    
-Loop time of 1.05141 on 1 procs for 30000 steps with 84 atoms
-
-Performance: 12326360.423 tau/day, 28533.242 timesteps/s, 2.397 Matom-step/s
-99.6% CPU use with 1 MPI tasks x 1 OpenMP threads
-
-MPI task timing breakdown:
-Section |  min time  |  avg time  |  max time  |%varavg| %total
----------------------------------------------------------------
-Pair    | 0.18569    | 0.18569    | 0.18569    |   0.0 | 17.66
-Bond    | 0.13065    | 0.13065    | 0.13065    |   0.0 | 12.43
-Neigh   | 0.5239     | 0.5239     | 0.5239     |   0.0 | 49.83
-Comm    | 0.079076   | 0.079076   | 0.079076   |   0.0 |  7.52
-Output  | 0.0053951  | 0.0053951  | 0.0053951  |   0.0 |  0.51
-Modify  | 0.10394    | 0.10394    | 0.10394    |   0.0 |  9.89
-Other   |            | 0.02275    |            |       |  2.16
-
-Nlocal:             84 ave          84 max          84 min
-Histogram: 1 0 0 0 0 0 0 0 0 0
-Nghost:            208 ave         208 max         208 min
-Histogram: 1 0 0 0 0 0 0 0 0 0
-Neighs:              3 ave           3 max           3 min
-Histogram: 1 0 0 0 0 0 0 0 0 0
-
-Total # of neighbors = 3
-Ave neighs/atom = 0.035714286
-Ave special neighs/atom = 1.9761905
-Neighbor list builds = 4426
-Dangerous builds = 0
-Changing box ...
-  orthogonal box = (0 0.28988622 0) to (28.220228 28.510114 28.8)
-  orthogonal box = (0 0 0) to (28.220228 28.220228 28.8)
-  orthogonal box = (0 0 0) to (28.220228 28.220228 28.8)
-WARNING: New thermo_style command, previous thermo_modify settings will be lost (src/output.cpp:904)
-----------------------------------------------------------------------
-Initializing the collective variables module, version 2024-06-04.
-Please cite Fiorin et al, Mol Phys 2013:
-  https://doi.org/10.1080/00268976.2013.813594
-as well as all other papers listed below for individual features used.
-This version was built with the C++11 standard or higher.
-Summary of compile-time features available in this build:
-  - SMP parallelism: enabled (num. threads = 1)
-  - Lepton custom functions: available
-  - Tcl interpreter: not available
-Using LAMMPS interface, version "2024-07-05".
-Setting initial step number from MD engine: 30000
-----------------------------------------------------------
-Using INTEL Package without Coprocessor.
-Compiler: Intel LLVM C++ 202400.0 / Intel(R) oneAPI DPC++/C++ Compiler 2024.0.2 (2024.0.2.20231213)
-SIMD compiler directives: Enabled
-Precision: mixed
-----------------------------------------------------------
-Generated 17 of 21 mixed pair_coeff terms from geometric mixing rule
-Setting up Verlet run ...
-  Unit style    : lj
-  Current step  : 30000
-  Time step     : 0.005
-WARNING: Inconsistent image flags (src/domain.cpp:1051)
-----------------------------------------------------------------------
-Reading new configuration from file "abf_BDT.colvars":
-# units = "" [default]
-# smp = on [default]
-# colvarsTrajFrequency = 1000
-# colvarsRestartFrequency = 0 [default]
-# scriptedColvarForces = off [default]
-# scriptingAfterBiases = off [default]
-----------------------------------------------------------------------
-  Initializing a new collective variable.
-  # name = "r"
-  Initializing a new "distance" component.
-    # name = "" [default]
-    # componentCoeff = 1 [default]
-    # componentExp = 1 [default]
-    # period = 0 [default]
-    # wrapAround = 0 [default]
-    # forceNoPBC = off [default]
-    # scalable = on [default]
-      Initializing atom group "group1".
-      # name = "" [default]
-      # centerToOrigin = off [default]
-      # centerToReference = off [default]
-      # rotateToReference = off [default]
-      # atomsOfGroup = "" [default]
-      # indexGroup = "" [default]
-      # psfSegID =  [default]
-      # atomsFile = "" [default]
-      # dummyAtom = ( 0 , 0 , 0 ) [default]
-      # enableFitGradients = on [default]
-      # printAtomIDs = off [default]
-      Atom group "group1" defined with 4 atoms requested.
-      Initializing atom group "group2".
-      # name = "" [default]
-      # centerToOrigin = off [default]
-      # centerToReference = off [default]
-      # rotateToReference = off [default]
-      # atomsOfGroup = "" [default]
-      # indexGroup = "" [default]
-      # psfSegID =  [default]
-      # atomsFile = "" [default]
-      # dummyAtom = ( 0 , 0 , 0 ) [default]
-      # enableFitGradients = on [default]
-      # printAtomIDs = off [default]
-      Atom group "group2" defined with 2 atoms requested.
-    # oneSiteSystemForce = off [default]
-    # oneSiteTotalForce = off [default]
-  All components initialized.
-  # timeStepFactor = 1 [default]
-  # width = 0.05
-  # lowerBoundary = 0
-  # upperBoundary = 24.65
-  # hardLowerBoundary = off [default]
-  # hardUpperBoundary = off [default]
-  # expandBoundaries = off [default]
-  # extendedLagrangian = off [default]
-  # outputValue = on [default]
-  # outputVelocity = off [default]
-  # outputTotalForce = off [default]
-  # outputAppliedForce = off [default]
-  # subtractAppliedForce = off [default]
-  # runAve = off [default]
-  # corrFunc = off [default]
-----------------------------------------------------------------------
-Collective variables initialized, 1 in total.
-----------------------------------------------------------------------
-  Initializing a new "abf" instance.
-  # name = "abf_r"
-  # colvars = { r }
-  # stepZeroData = off [default]
-  # outputEnergy = off [default]
-  # outputFreq = 1000
-  # timeStepFactor = 1 [default]
-  # applyBias = on [default]
-  # hideJacobian = off
-  Jacobian (geometric) forces will be included in reported free energy gradients.
-  # fullSamples = 1000
-  # minSamples = 500 [default]
-  # inputPrefix =  [default]
-  # historyFreq = 0 [default]
-  # shared = off [default]
-  # updateBias = on [default]
-  # maxForce =  [default]
-  # integrate = on [default]
-  Finished ABF setup.
-----------------------------------------------------------------------
-  Initializing a new "harmonicwalls" instance.
-  # name = "wall"
-  # colvars = { r }
-  # stepZeroData = off [default]
-  # outputEnergy = off [default]
-  # outputFreq = 0 [default]
-  # timeStepFactor = 1 [default]
-  # writeTISamples = off [default]
-  # writeTIPMF = off [default]
-  # forceConstant = 1 [default]
-  # decoupling = off [default]
-  # targetForceConstant = -1 [default]
-  # lowerWalls = { 0 } [default]
-  Lower walls were not provided.
-  # upperWalls = { 4.15399 }
-  # upperWallConstant = 0.000724403
-  The upper wall force constant for colvar "r" will be rescaled to 0.289761 according to the specified width (0.05).
-----------------------------------------------------------------------
-Collective variables biases initialized, 2 in total.
-----------------------------------------------------------------------
-Collective variables module (re)initialized.
-----------------------------------------------------------------------
-Current simulation parameters: initial step = 30000, integration timestep = 0.005
-Updating atomic parameters (masses, charges, etc).
-Re-initialized atom group for variable "r":0/0. 4 atoms: total mass = 2.4, total charge = 0.
-Re-initialized atom group for variable "r":0/1. 2 atoms: total mass = 0.378247, total charge = 0.
-The restart output state file will be "prod_1.restart.colvars.state".
-The final output state file will be "abf.colvars.state".
-Per MPI rank memory allocation (min/avg/max) = 27.86 | 27.86 | 27.86 Mbytes
-   Step          Temp          PotEng      v_avgmolgyr  
-     30000   0.99224797     0.80150809     1.7482776    
-   2000000   0.97788579     0.70928088     0.88556105   
-   4000000   1.0640193      0.7889552      0.87015943   
-   6000000   0.87032106     0.90370547     0.90232725   
-   8000000   0.86323038     0.91676873     0.99886031   
-  10000000   0.91006353     0.8157675      0.91980162   
-terminate called after throwing an instance of 'LAMMPS_NS::LAMMPSAbortException'
-  what():  ERROR on proc 0: Atoms have moved too far apart (-460.8030648351642) for minimum image
- (src/domain.cpp:1241)
-Last command: run			2000000000
-
-
-Program received signal SIGABRT, Aborted.
-0x00001555532a652f in raise () from /lib64/libc.so.6
-#0  0x00001555532a652f in raise () from /lib64/libc.so.6
-#1  0x0000155553279e65 in abort () from /lib64/libc.so.6
-#2  0x00001555536e5fbe in __gnu_cxx::__verbose_terminate_handler () at /home/conda/feedstock_root/build_artifacts/gcc_compilers_1724798733686/work/build/x86_64-conda-linux-gnu/libstdc++-v3/libsupc++/vterminate.cc:95
-#3  0x00001555536e4502 in __cxxabiv1::__terminate (handler=<optimized out>) at /home/conda/feedstock_root/build_artifacts/gcc_compilers_1724798733686/work/build/x86_64-conda-linux-gnu/libstdc++-v3/libsupc++/eh_terminate.cc:48
-#4  0x00001555536de2ec in __cxa_call_terminate (ue_header_in=0x17d1fc0) at /home/conda/feedstock_root/build_artifacts/gcc_compilers_1724798733686/work/build/x86_64-conda-linux-gnu/libstdc++-v3/libsupc++/eh_call.cc:56
-#5  0x00001555536e3e31 in __cxxabiv1::__gxx_personality_v0 (version=<optimized out>, actions=6, exception_class=5138137972254386944, ue_header=0x17d1fc0, context=0x7fffffff8eb0) at ../../../../libstdc++-v3/libsupc++/unwind-pe.h:692
-#6  0x00001555554ade01 in _Unwind_RaiseException_Phase2 (exc=exc@entry=0x17d1fc0, context=context@entry=0x7fffffff8eb0, frames_p=frames_p@entry=0x7fffffff8db8) at ../../../libgcc/gthr-default.h:64
-#7  0x00001555554ae3b7 in _Unwind_Resume (exc=0x17d1fc0) at ../../../libgcc/gthr-default.h:242
-#8  0x0000000000853ddc in LAMMPS_NS::Domain::minimum_image(double&, double&, double&) const ()
-#9  0x0000000000b27c21 in colvarproxy_lammps::position_distance(colvarmodule::rvector const&, colvarmodule::rvector const&) const ()
-#10 0x00000000011c2d0a in colvarmodule::position_distance(colvarmodule::rvector const&, colvarmodule::rvector const&) ()
-#11 0x000000000134f71e in colvar::distance::calc_value() ()
-#12 0x000000000125d90b in colvar::calc_cvcs(int, unsigned long) ()
-#13 0x00000000011f6577 in colvarproxy_smp::smp_colvars_loop() [clone .extracted] ()
-#14 0x0000155553fa4d93 in __kmp_invoke_microtask () from /opt/intel/oneapi/compiler/2024.0/lib/libiomp5.so
-#15 0x0000155553f11eb9 in __kmp_fork_call () from /opt/intel/oneapi/compiler/2024.0/lib/libiomp5.so
-#16 0x0000155553ec9b63 in __kmpc_fork_call () from /opt/intel/oneapi/compiler/2024.0/lib/libiomp5.so
-#17 0x00000000011f2646 in colvarproxy_smp::smp_colvars_loop() ()
-#18 0x00000000011b3ad0 in colvarmodule::calc_colvars() ()
-#19 0x00000000011b2d82 in colvarmodule::calc() ()
-#20 0x0000000000b294dd in colvarproxy_lammps::compute() ()
-#21 0x000000000064052d in LAMMPS_NS::FixColvars::post_force(int) ()
-#22 0x00000000004957b1 in LAMMPS_NS::Modify::post_force(int) ()
-#23 0x00000000006308dd in LAMMPS_NS::Verlet::run(int) ()
-#24 0x0000000000574c49 in LAMMPS_NS::Run::command(int, char**) ()
-#25 0x000000000041beb6 in LAMMPS_NS::Input::execute_command() ()
-#26 0x000000000041a76e in LAMMPS_NS::Input::file() ()
-#27 0x0000000000416c54 in main ()
+   4000000   1.0999762      0.80084886     1.1517312    
+   6000000   1.194688       0.73027496     1.5260616    
+   8000000   1.1167685      0.98640792     1.2570607    
+  10000000   0.88366065     0.7953376      0.76829634   
+  12000000   1.0699623      0.71106444     0.85981936   
+  14000000   1.0910405      0.47177492     2.0169031    
+  16000000   0.95907808     0.49547604     1.321412     
+  18000000   1.1031609      0.56246408     1.812206     
+  20000000   1.1191873      0.63648341     1.6328783    
+  22000000   1.0484884      0.47749329     1.2890333    
+  24000000   0.99141477     0.67304351     1.6343738    
+  26000000   1.0624088      0.78299972     2.100984     
+  28000000   0.89853021     0.61499496     1.9642154    
+  30000000   0.95268449     0.47205005     1.0480157    
+  32000000   0.99083573     0.96220815     1.4132433    
+  34000000   1.1001009      0.82172585     1.6353269    
+  36000000   0.95420735     0.70552132     1.6158314    
+  38000000   0.99509686     0.82250614     0.87305361   
+  40000000   0.93210383     0.82055009     1.7570231    
+  42000000   1.0448635      0.59334837     1.0130452    
+  44000000   1.066352       0.80656593     1.2442419    
+  46000000   0.98643534     0.94452562     0.98475682   
+  48000000   1.0162864      0.85852002     1.5123516    
+  50000000   0.98846487     0.88209751     0.97878399   
+  52000000   0.96475758     0.83698229     1.0635593    
+  54000000   1.1484756      0.85672999     0.72364527   
+  56000000   0.90710426     0.91771942     1.9026345    
+  58000000   1.1420358      0.93092069     1.3983553    
+  60000000   1.0653979      0.46382734     1.3601031    
+  62000000   1.0613984      0.60613467     1.5968248    
+  64000000   1.0159893      0.73357022     1.2014054    
+  66000000   1.1350411      0.69908444     0.86791218   
+  68000000   1.0851695      0.87829822     1.0626109    
+  70000000   0.95921695     0.8021176      1.0012635    
+  72000000   1.0583039      0.70350243     1.3813749    
+  74000000   1.0353402      0.79968451     1.1435862    
+  76000000   1.0831573      0.67581319     1.2031643    
+  78000000   0.86549258     0.68901561     0.81747622   
+  80000000   1.0303621      0.78808128     2.004466     
+slurmstepd: error: *** JOB 61114494 ON della-r3c4n16 CANCELLED AT 2024-12-15T23:50:32 DUE TO TIME LIMIT ***
