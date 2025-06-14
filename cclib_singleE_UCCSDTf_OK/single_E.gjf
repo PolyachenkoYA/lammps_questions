@@ -1,0 +1,13 @@
+%Chk=/scratch/gpfs/yp1065/TMD/pair_pot_Gaussian/N-Se/UCCSDTfull-N-Se-S2-ID2/d1.31544/single_E.chk
+%Mem=20GB
+%NProcShared=14
+# UCCSD(T,full)/aug-cc-pVQZ 
+#  Guess=Mix Int=(DKH,Grid=UltraFine)
+#  SCF=XQC NoSymm geom=nocrowd
+
+N - Se single point at R = 1.31544 A
+
+0 2
+N
+Se  1  1.31544
+
