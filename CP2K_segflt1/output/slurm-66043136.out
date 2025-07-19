@@ -1,0 +1,46 @@
+
+Program received signal SIGSEGV: Segmentation fault - invalid memory reference.
+
+Backtrace for this error:
+#0  0x152d0538f960 in ???
+#1  0x152d0538eac5 in ???
+#2  0x152d04f3751f in ???
+#3  0x55f341c96c8e in __qs_dispersion_nonloc_MOD_calculate_dispersion_nonloc
+	at /opt/cp2k/src/qs_dispersion_nonloc.F:209
+#4  0x55f3410bbd0c in __qs_vxc_MOD_qs_xc_density
+	at /opt/cp2k/src/qs_vxc.F:683
+#5  0x55f341a7839f in __qs_local_properties_MOD_qs_local_energy
+	at /opt/cp2k/src/qs_local_properties.F:200
+#6  0x55f340fbdcaf in qs_scf_post_local_energy
+	at /opt/cp2k/src/qs_scf_post_gpw.F:3030
+#7  0x55f340fbdcaf in __qs_scf_post_gpw_MOD_write_mo_free_results
+	at /opt/cp2k/src/qs_scf_post_gpw.F:2539
+#8  0x55f340fcbf4d in write_available_results
+	at /opt/cp2k/src/qs_scf_post_gpw.F:1669
+#9  0x55f340fcbf4d in __qs_scf_post_gpw_MOD_scf_post_calculation_gpw
+	at /opt/cp2k/src/qs_scf_post_gpw.F:358
+#10  0x55f342221d4d in __qs_scf_post_scf_MOD_qs_scf_compute_properties
+	at /opt/cp2k/src/qs_scf_post_scf.F:78
+#11  0x55f342105283 in __qs_scf_MOD_scf
+	at /opt/cp2k/src/qs_scf.F:299
+#12  0x55f34184b8ec in __qs_energy_MOD_qs_energies
+	at /opt/cp2k/src/qs_energy.F:126
+#13  0x55f341ec2591 in qs_forces
+	at /opt/cp2k/src/qs_force.F:200
+#14  0x55f3412dae90 in __force_env_methods_MOD_force_env_calc_energy_force
+	at /opt/cp2k/src/force_env_methods.F:260
+#15  0x55f340894f1d in qs_mol_dyn_low
+	at /opt/cp2k/src/motion/md_run.F:371
+#16  0x55f340895fc5 in __md_run_MOD_qs_mol_dyn
+	at /opt/cp2k/src/motion/md_run.F:149
+#17  0x55f34075a5da in cp2k_run
+	at /opt/cp2k/src/start/cp2k_runs.F:367
+#18  0x55f34075f292 in __cp2k_runs_MOD_run_input
+	at /opt/cp2k/src/start/cp2k_runs.F:935
+#19  0x55f3407488e1 in cp2k
+	at /opt/cp2k/src/start/cp2k.F:379
+#20  0x55f3405e65ce in main
+	at /opt/cp2k/src/start/cp2k.F:44
+/scratch/gpfs/DGRAVES/cp2k-cpu/container/bin_2025.1/cp2k.psmp: line 11: 2136445 Segmentation fault      apptainer exec -B ${PWD}:/host_pwd --pwd /host_pwd /scratch/gpfs/DGRAVES/cp2k-cpu/container/cp2k_v2025.1.sif cp2k $@
+srun: error: della-h16n1: task 0: Exited with exit code 139
+srun: Terminating StepId=66043136.0
