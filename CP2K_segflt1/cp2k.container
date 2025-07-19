@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "$1" == "--help" ]; then
+    echo "Usage: cp2k.container [options]"
+    echo "This is just a wrapper for the cp2k inside the container."
+    echo "Options are passed to cp2k as usual. Use it just like you would use cp2k.psmp"
+    echo "Use \`srun cp2k.container [options]\` to run in parallel"
+    echo "This container has ELPA installed. It is very fast."
+    exit 0
+fi
+
+apptainer exec -B ${PWD}:/host_pwd --pwd /host_pwd /scratch/gpfs/USERNAME/cp2k-cpu/container/cp2k_v2025.1.sif cp2k $@

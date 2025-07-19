@@ -1,0 +1,11 @@
+#%Module
+
+proc ModulesHelp { } {
+   puts stderr "This loads 2025.1 cp2k.psmp / cp2k.container with ELPA\nincludes: omp libint fftw3 libxc libgrpp pexsi elpa parallel scalapack mpi_f08 cosma quip xsmm plumed2 spglib libdftd4 sirius libvori libbqb libtorch libvdwxc hdf5 trexio"
+}
+
+module-whatis "This loads 2025.1 cp2k.psmp / cp2k.container with ELPA\nincludes: omp libint fftw3 libxc libgrpp pexsi elpa parallel scalapack mpi_f08 cosma quip xsmm plumed2 spglib libdftd4 sirius libvori libbqb libtorch libvdwxc hdf5 trexio"
+
+
+# Load Modules
+prepend-path PATH /scratch/gpfs/cp2k-cpu/container/bin_2025.1

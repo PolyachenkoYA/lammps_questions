@@ -12,7 +12,8 @@
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
 module purge
-source ~/.bashrc_cp2k
+#source ~/.bashrc_cp2k
+module use --append /scratch/gpfs/USERNAME/modulefiles/
 module load cp2k/cpu-container-2025.1
 
 path_mode="slurm"
