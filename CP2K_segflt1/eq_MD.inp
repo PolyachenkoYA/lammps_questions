@@ -1,0 +1,142 @@
+&GLOBAL
+	PROJECT eq_MD
+	RUN_TYPE MD
+	IOLEVEL  DEBUG
+	SEED 4
+	WALLTIME 24:00:00
+!	EXTENDED_FFT_LENGTHS T   ! for T < Tm where Tm \in (100; 200) K
+&END GLOBAL
+
+! &EXT_RESTART
+! 	RESTART_FILE_NAME  RESTART_FILENAME_STR
+! &END EXT_RESTART
+
+&FORCE_EVAL 
+	METHOD Quickstep
+	STRESS_TENSOR ANALYTICAL
+	
+	&DFT
+		BASIS_SET_FILE_NAME BASIS_MOLOPT_UZH
+		POTENTIAL_FILE_NAME POTENTIAL_UZH
+		CHARGE 0   ! tune this?
+		MULTIPLICITY 1    ! tune this?
+	
+	!	ACTIVATEUKS UKS TRUE  ! Enables unrestricted Kohn-Sham DFT
+	!	ACTIVATEUKS RELAX_MULTIPLICITY 0     ! let spins flip
+	
+	!	WFN_RESTART_FILE_NAME  RESTART_WFN_FILENAME_STR
+		
+		&QS 
+			METHOD GPW
+			EPS_DEFAULT 1.0E-8				! sets reasonable values for all other thresholds.
+			EXTRAPOLATION ASPC				! used for MD, the method used to generate the initial guess. 
+		&END QS 
+		
+		&MGRID 
+			CUTOFF [Ry] 400.0
+		&END MGRID
+		
+		&SCF
+			SCF_GUESS ATOMIC 				! RESTART/ATOMIC; can be used to RESTART an interrupted calculation
+			MAX_SCF 100
+			EPS_SCF 1.0E-5 					! accuracy of the SCF procedure typically 1.0E-6 - 1.0E-7
+			
+			&OT
+				PRECONDITIONER FULL_SINGLE_INVERSE			        ! an accurate preconditioner suitable also for larger systems
+			&END OT
+			
+			&OUTER_SCF 						! repeat the inner SCF cycle 10 times
+				MAX_SCF 10
+				EPS_SCF 1.0E-5 					! must match the above
+				OPTIMIZER DIIS 
+			&END OUTER_SCF 
+		&END SCF
+		
+		&XC 
+			&XC_FUNCTIONAL
+				&PBE
+				&END PBE
+			&END XC_FUNCTIONAL
+			&VDW_POTENTIAL
+				POTENTIAL_TYPE NON_LOCAL
+				&NON_LOCAL
+					TYPE RVV10
+					PARAMETERS       6.6   0.0093     ! https://doi.org/10.1103/PhysRevB.95.081105
+					KERNEL_FILE_NAME rVV10_kernel_table.dat
+					CUTOFF           400.0   ! [Ry]
+				&END NON_LOCAL
+			&END VDW_POTENTIAL
+		&END XC
+	&END DFT
+
+	&SUBSYS
+		&CELL 
+			A 12.614037361480426 0.0 0.0
+			B -6.30701868074021 10.924076799328082 0.0
+			C 0.0 0.0 50.0
+		&END CELL
+		
+		&TOPOLOGY
+			COORD_FILE_NAME init_crd.xyz
+			COORD_FILE_FORMAT XYZ
+		&END TOPOLOGY
+		
+		
+		&KIND Mo
+			BASIS_SET ORB TZV2P-MOLOPT-GGA-GTH-q14
+			POTENTIAL GTH-GGA-q14
+		&END KIND
+		&KIND S
+			BASIS_SET ORB TZV2P-MOLOPT-GGA-GTH-q6
+			POTENTIAL GTH-GGA-q6
+		&END KIND
+	&END SUBSYS 
+&END FORCE_EVAL
+
+&MOTION
+	&MD
+		ENSEMBLE NPT_F
+		TEMPERATURE [K] 300.0
+		TIMESTEP [fs] 1.0
+		STEPS 2000
+		!TEMP_TOL 17.67766952966369
+		&THERMOSTAT
+			REGION MASSIVE
+			TYPE CSVR
+			&CSVR 
+				TIMECON [fs] 10.0
+			&END CSVR 
+		&END THERMOSTAT
+		&BAROSTAT         
+			TIMECON [fs] 20.0
+			PRESSURE [bar] 0.0
+			VIRIAL  XY                   ! relax only the XY components; Z stays put
+		&END BAROSTAT
+	&END MD 
+	
+	&PRINT
+		&TRAJECTORY
+			&EACH
+				MD 10
+			&END EACH
+		&END TRAJECTORY
+		
+		&VELOCITIES
+			&EACH
+				MD 10
+			&END EACH
+		&END VELOCITIES
+		
+		&FORCES OFF
+		&END FORCES
+		
+		&RESTART
+			BACKUP_COPIES 1
+			&EACH
+				MD 1
+			&END EACH
+		&END RESTART
+	&END PRINT
+&END 
+
+
